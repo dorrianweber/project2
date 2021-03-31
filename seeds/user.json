@@ -1,9 +1,8 @@
 [
   {
-    "user_id": 1,
-    "date_id": "3/27/21",
+    "id": 1,
+    "name": "Lex Luthor",
     "email": "example@gmail.com",
     "password": "example123"
   }
 ]
-

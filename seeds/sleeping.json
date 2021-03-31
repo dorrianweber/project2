@@ -1,40 +1,40 @@
 [
   {
-    "sleeping_hours": 5,
+    "hours": 5,
     "date": "3/27/21",
     "user_id": 1
   },
   {
-    "sleeping_hours": "6",
+    "hours": 6,
     "date": "3/26/21",
     "user_id": 1
   },
   {
-    "sleeping_hours": 9,
+    "hours": 9,
     "date": "3/27/21",
     "user_id": 2
   },
   {
-    "sleeping_hours": 8,
+    "hours": 8,
     "date": "3/26/21",
     "user_id": 2
   },{
-    "sleeping_hours": 6.5,
+    "hours": 6.5,
     "date": "3/27/21",
     "user_id": 3
   },
   {
-    "sleeping_hours": 6,
+    "hours": 6,
     "date": "3/26/21",
     "user_id": 3
   },
   {
-    "sleeping_hours": 3,
+    "hours": 3,
     "date": "3/27/21",
     "user_id": 4
   },
   {
-    "sleeping_hours": 4,
+    "hours": 4,
     "date": "3/26/21",
     "user_id": 4
   }
