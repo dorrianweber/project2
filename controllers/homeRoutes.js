@@ -1,23 +1,11 @@
 const router = require('express').Router();
-const withAuth = require('../utils/auth');
-const { User, Sleeping, Spending, Eating } = require('../models');
+const { User, Sleeping, Eating, Spending } = require('../models');
+const withAuth = require('../utils/auth')
+;
 
 router.get('/', async (req, res) => {
   try {
-    // const userData = await Project.findAll({
-    //   include: [
-    //     {
-    //       model: User,
-    //       attributes: ['name'],
-    //     },
-    //   ],
-    // });
-
-    // // Serialize data so the template can read it
-    // const users = userData.map((project) => project.get({ plain: true }));
-
-    // Pass serialized data and session flag into template
-    res.render('homepage');
+    res.render('homepage')
   } catch (err) {
     res.status(500).json(err);
   }
@@ -29,10 +17,25 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+      include: [{ model: User }],
     });
 
+    // const sleepingData = await Sleeping.findAll(req.session.user_id, {
+    //   where: user_id = req.session.user_id
+    // }); 
+
+    // const spendingData = await Spending.findAll(req.session.user_id, {
+    //   where: user_id = req.session.user_id
+    // }); 
+
+    // const eatingData = await Eating.findAll(req.session.user_id, {
+    //   where: user_id = req.session.user_id
+    // }); 
+
     const user = userData.get({ plain: true });
+    // const sleep = sleepingData.get({ plain: true });
+    // const spend = spendingData.get({ plain: true });
+    // const eat = eatingData.get({ plain: true });
 
     res.render('profile', {
       ...user,
