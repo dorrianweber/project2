@@ -6,7 +6,7 @@ const Spending = require('./Spending');
 // Eating relationships
 User.hasMany(Eating, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE'
+    // onDelete: 'CASCADE'
 });
 
 Eating.belongsTo(User, {
@@ -16,7 +16,7 @@ Eating.belongsTo(User, {
 // Sleeping relationships
 User.hasMany(Sleeping, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE'
+    // onDelete: 'CASCADE'
 });
 
 Sleeping.belongsTo(User, {
@@ -26,7 +26,7 @@ Sleeping.belongsTo(User, {
 // Spending relationships
 User.hasMany(Spending, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE'
+    // onDelete: 'CASCADE'
 });
 
 Spending.belongsTo(User, {
