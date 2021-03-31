@@ -13,9 +13,10 @@
         <header class="display-flex justify-space-between align-center p-2">
             <h1>
                 <span role="img" aria-label="money">💸</span>
-                <img src="/public/images/healthyhabits.png"><a>Healthy Habits!</a>
+                <a href="/">Healthy Habits!</a>
+
             </h1>
-            <nav>
+            <nav class="topnav">
                 <!-- Conditionally render login or logout links -->
                 {{#if logged_in}}
                 <a href="/profile">profile</a> |
@@ -30,7 +31,7 @@
             {{{ body }}}
         </main>
         <footer>
-
+            Thanks for visiting
         </footer>
     </div>
 
