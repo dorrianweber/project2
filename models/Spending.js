@@ -2,13 +2,13 @@ const { Model, DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
 
-class EatingInfo extends Model {
+class Spending extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
-EatingInfo.init(
+Spending.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -24,21 +24,17 @@ EatingInfo.init(
         isDate: true,
       },
     },
-    calories: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+    restaurantSpent: {
+        type: DataTypes.DECIMAL,
+        allowNull: true,
     },
-    protein: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+    coffeeSpent: {
+        type: DataTypes.DECIMAL,
+        allowNull: true,
     },
-    carbs: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
-    fat: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+    barSpent: {
+        type: DataTypes.DECIMAL,
+        allowNull: true,
     },
   },
   {
@@ -46,8 +42,21 @@ EatingInfo.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "eatinginfo",
+    modelName: "spending",
   }
 );
 
-module.exports = EatingInfo;
+module.exports = Spending;
+
+
+
+
+
+
+
+
+
+
+
+
+

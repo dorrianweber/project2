@@ -2,13 +2,13 @@ const { Model, DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
 
-class SleepingInfo extends Model {
+class Sleeping extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
-SleepingInfo.init(
+Sleeping.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -34,8 +34,8 @@ SleepingInfo.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "sleepinginfo",
+    modelName: "sleeping",
   }
 );
 
-module.exports = SleepingInfo;
+module.exports = Sleeping;

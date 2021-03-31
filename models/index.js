@@ -1,36 +1,36 @@
 const User = require('./User');
-const EatingInfo = require('./EatingInfo');
-const SleepingInfo = require('./SleepingInfo');
-const SpendingInfo = require('./SpendingInfo');
+const Eating = require('./Eating');
+const Sleeping = require('./Sleeping');
+const Spending = require('./Spending');
 
-// EatingInfo relationships
-User.hasMany(EatingInfo, {
+// Eating relationships
+User.hasMany(Eating, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
 
-EatingInfo.belongsTo(User, {
+Eating.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
-// SleepingInfo relationships
-User.hasMany(SleepingInfo, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
-});
-
-SleepingInfo.belongsTo(User, {
-    foreignKey: 'user_id',
-});
-
-// SpendingInfo relationships
-User.hasMany(SpendingInfo, {
+// Sleeping relationships
+User.hasMany(Sleeping, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
 
-SpendingInfo.belongsTo(User, {
+Sleeping.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
-module.exports = { User, EatingInfo, SleepingInfo, SpendingInfo };
+// Spending relationships
+User.hasMany(Spending, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+Spending.belongsTo(User, {
+    foreignKey: 'user_id',
+});
+
+module.exports = { User, Eating, Sleeping, Spending };
