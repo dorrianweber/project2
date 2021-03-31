@@ -1,5 +1,38 @@
-h2 {
-  align-items: center;
-  background-color: blue;
-  color: white;
+header h1 {
+  background-color: #1888b4;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+
+body {
+  flex: 1;
+  padding: 10px;
+  height: auto;
+  background-color: #e9f1f1;
+}
+
+.row h2 {
+  flex: 1;
+  padding: 10px;
+  background-color: #7d9192;
+}
+
+.row p {
+  flex: 1;
+  padding: 10px;
+  background-color: #7d9192;
+}
+
+.column1 {
+  float: left;
+  padding: 10px;
+  height: auto;
+  width: 99%;
+  background-color: #7d9192;
+}
+
+.column1 img {
+  height: 50%;
+  width: 50%;
 }
