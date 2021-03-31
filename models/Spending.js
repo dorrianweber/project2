@@ -36,6 +36,14 @@ Spending.init(
         type: DataTypes.DECIMAL,
         allowNull: true,
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "user",
+        key: "id"
+      }
+    },
   },
   {
     sequelize,
