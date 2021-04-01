@@ -67,7 +67,7 @@ body {
   background-color: lightsteelblue;
 }
 
-img {
+img.healthy {
   height: 40%;
   width: 40%;
   position: relative;
@@ -81,6 +81,21 @@ img {
   to {
     left: 1100px;
   }
+}
+
+.no-button {
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  background-color: #333;
+}
+
+.no-button:hover {
+  background-color: #ddd;
+  color: black;
 }
 
 footer {
