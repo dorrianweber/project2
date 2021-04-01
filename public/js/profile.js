@@ -38,6 +38,27 @@ const delButtonHandler = async (event) => {
   }
 };
 
+const init = async () => {
+  const eatingRequest = await fetch('/api/eating', {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  const sleepingData = await fetch('/api/sleeping', {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  const spendingData = await fetch('/api/spending', {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  eatingData.textContent(eatingRequest);
+
+  //data still needs to be inserted into handlebars
+};
+
 document
   .querySelector('.new-project-form')
   .addEventListener('submit', newFormHandler);
@@ -45,3 +66,8 @@ document
 document
   .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
+
+const eatingData = document
+  .querySelector('.eatingData')
+
+  init();
