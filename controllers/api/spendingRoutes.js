@@ -22,7 +22,7 @@ router.get('/', withAuth, async (req, res) => {
         user_id: req.session.user_id,
       },
     });
-    res.status(200).json(spendData);
+    return res.json({data: spendData , success: true});
   } catch (err) {
     res.status(500).json(err);
   }

@@ -1,88 +1,60 @@
-// const newFormHandler = async (event) => {
-//   event.preventDefault();
-
-
-//const { response } = require("express");
-
-//const { response } = require("express");
-
-//   const name = document.querySelector('#project-name').value.trim();
-//   const needed_funding = document.querySelector('#project-funding').value.trim();
-//   const description = document.querySelector('#project-desc').value.trim();
-
-//   if (name && needed_funding && description) {
-//     const response = await fetch(`/api/projects`, {
-//       method: 'POST',
-//       body: JSON.stringify({ name, needed_funding, description }),
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//     });
-
-//     if (response.ok) {
-//       document.location.replace('/profile');
-//     } else {
-//       alert('Failed to create project');
-//     }
-//   }
-// };
-
-// const delButtonHandler = async (event) => {
-//   if (event.target.hasAttribute('data-id')) {
-//     const id = event.target.getAttribute('data-id');
-
-//     const response = await fetch(`/api/projects/${id}`, {
-//       method: 'DELETE',
-//     });
-
-//     if (response.ok) {
-//       document.location.replace('/profile');
-//     } else {
-//       alert('Failed to delete project');
-//     }
-//   }
-// };
-
 const init = async () => {
-  
-  let sleepingData = document.getElementById('sleepingData');
-  let spendingData = document.getElementById('spendingData');
 
-  
   const eatingRequest = await fetch('/api/eating', {
     method: 'GET',
     headers: {
       "Content-type": "application/json"
     },
   },
-  )//.then(response => {
-    eatingRequest.json().then((newData) => {
-      console.log(newData)
-      document.getElementById('eatingData').innerText = newData.data[0].id; 
+  );
+  var eatIndex = ""
+    eatingRequest.json().then((newEat) => {
+      for (let index = 0; index < newEat.data.length; index++) {
+        let foodDate = newEat.data[index].date;
+        let foodName = newEat.data[index].food_name;
+        eatIndex = (eatIndex) + (foodDate) + `: ` + (foodName) + `<br>`
+        console.log(eatIndex)
+      }
+      document.getElementById('eatingData').innerHTML = eatIndex; 
     });
 
-  // document.getElementById('eatingData').innerText = newEatingData; 
-  // console.log(eatingRequest)
+    const sleepingRequest = await fetch('/api/sleeping', {
+      method: 'GET',
+      headers: {
+        "Content-type": "application/json"
+      },
+    },
+    );
+    var sleepIndex = ""
+    sleepingRequest.json().then((newSleep) => {
+      console.log(newSleep.data)
+      for (let index = 0; index < newSleep.data.length; index++) {
+        let sleepDate = newSleep.data[index].date;
+        let sleepTime = newSleep.data[index].hours;
+        sleepIndex = (sleepIndex) + (sleepDate) + `: ` + (sleepTime) + `<br>`
+        console.log(sleepIndex)
+      }
+      document.getElementById('sleepingData').innerHTML = sleepIndex; 
+    });
 
-
-
-  
-  
-
-
-  const sleepingRequest = await fetch('/api/sleeping', {
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
-  });
-
-  const spendingRequest = await fetch('/api/spending', {
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
-  });
-
-
+    const spendingRequest = await fetch('/api/spending', {
+      method: 'GET',
+      headers: {
+         "Content-type": "application/json"
+      },
+      },
+      );
+      var spendIndex = ""
+     spendingRequest.json().then((newSpend) => {
+       console.log(newSpend.data)
+      for (let index = 0; index < newSpend.data.length; index++) {
+        let spendDate = newSpend.data[index].date;
+        let spendAmount = newSpend.data[index].restaurantSpent;
+        spendIndex = (spendIndex) + (spendDate) + `: ` + (spendAmount) + `<br>`
+        console.log(spendIndex)
+      }
+          document.getElementById('spendingData').innerHTML = spendIndex; 
+        });
 };
-
-  //data still needs to be inserted into handlebars
 
 init();
