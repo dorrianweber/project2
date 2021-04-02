@@ -22,7 +22,10 @@ router.get('/', withAuth, async (req, res) => {
         user_id: req.session.user_id,
       },
     });
-    res.status(200).json(eatData);
+    //
+    //const allEats = eatData.map((contents) => contents.get({ plain: true }));
+    console.log(eatData);
+    return res.json({data: eatData , success: true});
   } catch (err) {
     res.status(500).json(err);
   }
