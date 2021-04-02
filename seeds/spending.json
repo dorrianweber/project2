@@ -1,22 +1,22 @@
 [
   {
-    "restaurantSpent": 17.39,
-    "coffeeSpent": 4.87,
-    "barSpent": 14.98,
+    "restaurantSpent": "17.39",
+    "coffeeSpent": "4.87",
+    "barSpent": "14.98",
     "date": "3/27/21",
     "user_id": 1
   },
   {
-    "restaurantSpent": 12.69,
-    "coffeeSpent": 4.87,
-    "barSpent": 0,
+    "restaurantSpent": "12.69",
+    "coffeeSpent": "4.87",
+    "barSpent": "0",
     "date": "3/28/21",
     "user_id": 1
   },
   {
-    "restaurantSpent": 16.21,
-    "coffeeSpent": 4.87,
-    "barSpent": 0,
+    "restaurantSpent": "16.21",
+    "coffeeSpent": "4.87",
+    "barSpent": "0",
     "date": "3/29/21",
     "user_id": 1
   }

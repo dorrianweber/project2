@@ -25,15 +25,15 @@ Spending.init(
       },
     },
     restaurantSpent: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.STRING,
         allowNull: true,
     },
     coffeeSpent: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.STRING,
         allowNull: true,
     },
     barSpent: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.STRING,
         allowNull: true,
     },
     user_id: {
