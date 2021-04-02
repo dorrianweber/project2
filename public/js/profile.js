@@ -1,6 +1,11 @@
 // const newFormHandler = async (event) => {
 //   event.preventDefault();
 
+
+//const { response } = require("express");
+
+//const { response } = require("express");
+
 //   const name = document.querySelector('#project-name').value.trim();
 //   const needed_funding = document.querySelector('#project-funding').value.trim();
 //   const description = document.querySelector('#project-desc').value.trim();
@@ -39,13 +44,31 @@
 // };
 
 const init = async () => {
-  const eatingData = document.getElementById('eatingData');
-  const sleepingData = document.getElementById('sleepingData');
-  const spendingData = document.getElementById('spendingData');
+  
+  let sleepingData = document.getElementById('sleepingData');
+  let spendingData = document.getElementById('spendingData');
+
+  
   const eatingRequest = await fetch('/api/eating', {
     method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
-  });
+    headers: {
+      "Content-type": "application/json"
+    },
+  },
+  )//.then(response => {
+    eatingRequest.json().then((newData) => {
+      console.log(newData)
+      document.getElementById('eatingData').innerText = newData.data[0].id; 
+    });
+
+  // document.getElementById('eatingData').innerText = newEatingData; 
+  // console.log(eatingRequest)
+
+
+
+  
+  
+
 
   const sleepingRequest = await fetch('/api/sleeping', {
     method: 'GET',
@@ -57,11 +80,9 @@ const init = async () => {
     headers: { 'Content-Type': 'application/json' },
   });
 
-  eatingData;
-  sleepingData;
-  spendingData;
+
+};
 
   //data still needs to be inserted into handlebars
-};
 
 init();
