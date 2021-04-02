@@ -22,7 +22,7 @@ router.get('/', withAuth, async (req, res) => {
         user_id: req.session.user_id,
       },
     });
-    res.status(200).json(sleepData);
+    return res.json({data: sleepData , success: true});
   } catch (err) {
     res.status(500).json(err);
   }
