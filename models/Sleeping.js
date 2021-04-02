@@ -25,7 +25,7 @@ Sleeping.init(
       },
     },
     hours: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     user_id: {

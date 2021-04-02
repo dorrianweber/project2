@@ -9,12 +9,13 @@ const init = async () => {
   );
   var eatIndex = ""
     eatingRequest.json().then((newEat) => {
+      console.log(`Eating Data:`)
+      console.log(newEat.data);
       for (let index = 0; index < newEat.data.length; index++) {
         let foodDate = newEat.data[index].date;
         let foodName = newEat.data[index].food_name;
         eatIndex = (eatIndex) + (foodDate) + `: ` + (foodName) + `<br>`
-        console.log(eatIndex)
-      }
+      };
       document.getElementById('eatingData').innerHTML = eatIndex; 
     });
 
@@ -27,13 +28,13 @@ const init = async () => {
     );
     var sleepIndex = ""
     sleepingRequest.json().then((newSleep) => {
-      console.log(newSleep.data)
+      console.log(`Sleeping Data:`)
+      console.log(newSleep.data);
       for (let index = 0; index < newSleep.data.length; index++) {
         let sleepDate = newSleep.data[index].date;
         let sleepTime = newSleep.data[index].hours;
         sleepIndex = (sleepIndex) + (sleepDate) + `: ` + (sleepTime) + `<br>`
-        console.log(sleepIndex)
-      }
+      };
       document.getElementById('sleepingData').innerHTML = sleepIndex; 
     });
 
@@ -46,13 +47,13 @@ const init = async () => {
       );
       var spendIndex = ""
      spendingRequest.json().then((newSpend) => {
-       console.log(newSpend.data)
+      console.log(`Spending Data:`)
+       console.log(newSpend.data);
       for (let index = 0; index < newSpend.data.length; index++) {
         let spendDate = newSpend.data[index].date;
         let spendAmount = newSpend.data[index].restaurantSpent;
         spendIndex = (spendIndex) + (spendDate) + `: ` + (spendAmount) + `<br>`
-        console.log(spendIndex)
-      }
+      };
           document.getElementById('spendingData').innerHTML = spendIndex; 
         });
 };
