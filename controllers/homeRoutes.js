@@ -48,7 +48,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
     res.render('profile', {
       user,
-      logged_in: true
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -63,6 +63,54 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+// Base submit page
+router.get('/submit', (req, res) => {
+  if (!req.session.logged_in) {
+    res.redirect('/login');
+    return;
+  }
+
+  res.render('submit', {
+    logged_in: req.session.logged_in
+  });
+});
+
+// Eating info submit page
+router.get('/eatingForm', (req, res) => {
+  if (!req.session.logged_in) {
+    res.redirect('/login');
+    return;
+  }
+
+  res.render('eatingForm', {
+    logged_in: req.session.logged_in
+  });
+});
+
+// Sleeping info submit page
+router.get('/sleepingForm', (req, res) => {
+  if (!req.session.logged_in) {
+    res.redirect('/login');
+    return;
+  }
+
+  res.render('sleepingForm', {
+    logged_in: req.session.logged_in
+  });
+});
+
+// Spending info submit page
+router.get('/spendingForm', (req, res) => {
+  if (!req.session.logged_in) {
+    res.redirect('/login');
+    return;
+  }
+
+  res.render('spendingForm', {
+    logged_in: req.session.logged_in
+  });
 });
 
 module.exports = router;
