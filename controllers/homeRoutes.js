@@ -65,14 +65,14 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-// Base submit page
-router.get('/submit', (req, res) => {
+// Category select page for submissions
+router.get('/categorySelect', (req, res) => {
   if (!req.session.logged_in) {
     res.redirect('/login');
     return;
   }
 
-  res.render('submit', {
+  res.render('categorySelect', {
     logged_in: req.session.logged_in
   });
 });
