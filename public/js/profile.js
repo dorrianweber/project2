@@ -125,7 +125,7 @@ const init = async () => {
     console.log(newSpend.data);
     for (let index = 0; index < newSpend.data.length; index++) {
       let spendDate = newSpend.data[index].date;
-      let spendAmount = newSpend.data[index].restaurantSpent;
+      let spendAmount = newSpend.data[index].restaurant;
       spendIndex = spendIndex + spendDate + `: ` + spendAmount + `<br>`;
       console.log(spendIndex);
     }
