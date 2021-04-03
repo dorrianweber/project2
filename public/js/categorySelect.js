@@ -27,23 +27,6 @@ nextBtn.addEventListener("click", (e) => {
       break;
 
     default:
-      document.location.replace("/submit");
+      document.location.replace("/categorySelect");
   }
 });
-
-// const eatingFormHandler = async (event) => {
-//     event.preventDefault();
-
-//     const mealType = document.querySelector('#mealType').value;
-//     const calories =  document.querySelector('#calories').value.trim();
-//     const protein =  document.querySelector('#protein').value.trim();
-//     const fat =  document.querySelector('#fat').value.trim();
-//     const carbs =  document.querySelector('#carbs').value.trim();
-
-//     const response = await fetch('')
-// };
-
-// submitBtn.addEventListener("click", (e) => {
-//     e.preventDefault();
-
-// });
