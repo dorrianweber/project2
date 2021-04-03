@@ -1,16 +1,22 @@
-<form class="form habit-form">
+<form class="form spending-form">
+    
+    <label for="date">Date:</label>
+    <input class="form-input" type="date" id="date"/>
+
+    <br>
+    
     <label for="restaurant">Restaurant spending ($):</label>
-    <input class="form-input" type="number" id="restaurant" />
+    <input class="form-input" type="number" id="restaurant" step="0.01" min="0.00"/>
 
     <br>
 
     <label for="coffee">Coffee spending ($):</label>
-    <input class="form-input" type="number" id="coffee" />
+    <input class="form-input" type="number" id="coffee" step="0.01" min="0.00" />
 
     <br>
 
     <label for="bar">Bar spending ($):</label>
-    <input class="form-input" type="number" id="bar" />
+    <input class="form-input" type="number" id="bar" step="0.01" min="0.00" />
     
     <br>
 

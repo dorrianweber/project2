@@ -24,16 +24,16 @@ Spending.init(
         isDate: true,
       },
     },
-    restaurantSpent: {
-        type: DataTypes.STRING,
+    restaurant: {
+        type: DataTypes.DECIMAL(10,2),
         allowNull: true,
     },
-    coffeeSpent: {
-        type: DataTypes.STRING,
+    coffee: {
+        type: DataTypes.DECIMAL(10,2),
         allowNull: true,
     },
-    barSpent: {
-        type: DataTypes.STRING,
+    bar: {
+        type: DataTypes.DECIMAL(10,2),
         allowNull: true,
     },
     user_id: {
