@@ -118,3 +118,17 @@ footer {
   width: 800px;
   float: right;
 }
+
+form.form {
+  text-align: left;
+  margin: 10px;
+  padding: 20px;
+  border: solid gray;
+  width: auto;
+  display: inline-block;
+}
+
+input {
+  margin: 5px;
+  align-content: right;
+}
