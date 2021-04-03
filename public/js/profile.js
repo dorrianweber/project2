@@ -7,20 +7,12 @@ const init = async () => {
   });
   var eatIndex = "";
   eatingRequest.json().then((newEat) => {
+    console.log(`Eating Data:`);
+    console.log(newEat.data);
     for (let index = 0; index < newEat.data.length; index++) {
       let foodDate = newEat.data[index].date;
       let foodName = newEat.data[index].food_name;
-      let foodCalories = newEat.data[index].calories;
-      eatIndex =
-        eatIndex +
-        foodDate +
-        `: ` +
-        foodName +
-        ` ` +
-        foodCalories +
-        `  ` +
-        `<br>`;
-      console.log(eatIndex);
+      eatIndex = eatIndex + foodDate + `: ` + foodName + `<br>`;
     }
     document.getElementById("eatingData").innerHTML = eatIndex;
     two();
@@ -93,6 +85,7 @@ const init = async () => {
       "Content-type": "application/json",
     },
   });
+
   var sleepIndex = "";
   sleepingRequest.json().then((newSleep) => {
     console.log(newSleep.data);
@@ -111,6 +104,7 @@ const init = async () => {
       "Content-type": "application/json",
     },
   });
+
   var spendIndex = "";
   spendingRequest.json().then((newSpend) => {
     console.log(newSpend.data);

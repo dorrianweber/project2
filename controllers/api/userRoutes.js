@@ -16,8 +16,6 @@ router.post('/', async (req, res) => {
   }
 });
 
-
-
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -59,5 +57,9 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
+// router.post('/submit', (req, res) => {
+
+// });
 
 module.exports = router;

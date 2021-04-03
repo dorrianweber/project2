@@ -18,6 +18,10 @@ body {
   background-color: white;
 }
 
+.quotes {
+  text-align: center;
+}
+
 .topnav {
   overflow: hidden;
   background-color: #333;
