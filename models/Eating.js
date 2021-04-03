@@ -30,11 +30,11 @@ Eating.init(
     },
     meal_type: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     calories: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     protein: {
       type: DataTypes.STRING,

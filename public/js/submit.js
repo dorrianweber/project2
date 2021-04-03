@@ -1,8 +1,5 @@
 const categories = document.querySelector('#categories');
 const nextBtn = document.querySelector('#category-next');
-const eatingSubmit = document.querySelector('#eatingSubmit');
-const sleepingSubmit = document.querySelector('#sleepingSubmit');
-const spendingSubmit = document.querySelector('#spendingSubmit');
 
 categories.addEventListener("change", (e) => {
     e.preventDefault();
@@ -33,42 +30,3 @@ nextBtn.addEventListener("click", (e) => {
         document.location.replace('/submit');
     };
 });
-
-// const eatingFormHandler = async (event) => {
-//     event.preventDefault();
-    
-//     const mealType = document.querySelector('#mealType').value;
-//     const calories =  document.querySelector('#calories').value.trim();
-//     const protein =  document.querySelector('#protein').value.trim();
-//     const fat =  document.querySelector('#fat').value.trim();
-//     const carbs =  document.querySelector('#carbs').value.trim();
-
-//     const response = await fetch('')
-// };
-
-// submitBtn.addEventListener("click", (e) => {
-//     e.preventDefault();
-    
-// });
-
-const signupFormHandler = async (event) => {
-    event.preventDefault();
-  
-    const name = document.querySelector('#name-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
-  
-    if (name && email && password) {
-      const response = await fetch('/api/users', {
-        method: 'POST',
-        body: JSON.stringify({ name, email, password }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-  
-      if (response.ok) {
-        document.location.replace('/profile');
-      } else {
-        alert(response.statusText);
-      }
-    }
-  };

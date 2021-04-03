@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
   
       if (response.ok) {
         
-        window.location.replace('/profile');
+        document.location.replace('/profile');
       } else {
         alert(response.statusText);
       }
