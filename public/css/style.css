@@ -71,7 +71,7 @@ img.healthy {
   height: 40%;
   width: 40%;
   position: relative;
-  animation: mymove 5s infinite;
+  animation: mymove 8s infinite;
 }
 
 @keyframes mymove {
@@ -107,4 +107,10 @@ footer {
   color: black;
   text-align: center;
   padding: 10px;
+}
+
+.container1 {
+  height: 500px;
+  width: 800px;
+  float: right;
 }
