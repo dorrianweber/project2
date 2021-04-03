@@ -1,8 +1,5 @@
-const categories = document.querySelector("#categories");
-const nextBtn = document.querySelector("#category-next");
-const eatingSubmit = document.querySelector("#eatingSubmit");
-const sleepingSubmit = document.querySelector("#sleepingSubmit");
-const spendingSubmit = document.querySelector("#spendingSubmit");
+const categories = document.querySelector('#categories');
+const nextBtn = document.querySelector('#category-next');
 
 categories.addEventListener("change", (e) => {
   e.preventDefault();

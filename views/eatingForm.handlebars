@@ -1,12 +1,17 @@
-<form class="form habit-form">
+<form class="form eating-form">
 
-    <label for="food-name">Food name:</label>
-    <input class="form-input" type="text" id="food-name" />
+    <label for="date">Date:</label>
+    <input class="form-input" type="date" id="date"/>
+
+    <br>
+    
+    <label for="food_name">Food name:</label>
+    <input class="form-input" type="text" id="food_name" />
 
     <br>
 
-    <label for="mealType">Meal Type:</label>
-    <select name="mealType" id="mealType">
+    <label for="meal_type">Meal Type:</label>
+    <select name="meal_type" id="meal_type">
         <option value="breakfast">Breakfast</option>
         <option value="lunch">Lunch</option>
         <option value="dinner">Dinner</option>
@@ -40,3 +45,5 @@
     <button class="btn btn-primary" id="eatingSubmit" type="submit">Submit</button>
 
 </form>
+
+<script src="./js/eatingSubmit.js"></script>
