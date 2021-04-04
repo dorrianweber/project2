@@ -146,9 +146,6 @@ const init = async () => {
         console.log(err);
       });
   }
-  // Repeat generateQuote() every 10 seconds
-  setInterval(generateQuote(), 60000);
-  //Note - 10000 milliseconds = 10
 };
 
 init();
