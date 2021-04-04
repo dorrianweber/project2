@@ -20,6 +20,17 @@ body {
 
 .quotes {
   text-align: center;
+  padding: 5px;
+}
+
+#quote {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+#author {
+  font-weight: normal;
+  font-size: 20px;
 }
 
 .topnav {
