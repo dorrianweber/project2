@@ -54,47 +54,58 @@ body {
   color: black;
 }
 
-.row h2 {
+h5 {
   flex: 1;
   padding: 10px;
+  text-align: center;
+  /* margin-left: 10px;
+  margin-right: 10px; */
+  color: black;
+  font-size: larger;
   background-color: lightsteelblue;
 }
 
-.row p {
+/* Home page section, 3 columns */
+.row2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 25%;
+  padding: 20px;
+  color: blue;
+  font-size: medium;
+
+  text-align: center;
+}
+
+.mainquote {
   flex: 1;
-  padding: 10px;
+  padding: 5px;
   background-color: lightsteelblue;
-}
-
-.column1 {
-  float: left;
-  padding: 10px;
-  height: auto;
-  width: 99%;
-  background-color: lightsteelblue;
-}
-
-.column2 {
-  float: left;
-  padding: 10px;
-  height: auto;
-  width: auto;
-  background-color: lightsteelblue;
+  text-align: center;
+  color: black;
+  font-size: larger;
+  font-style: italic;
 }
 
 img.healthy {
-  height: 40%;
-  width: 40%;
+  height: 100%;
+  width: 100%;
   position: relative;
   animation: mymove 8s infinite;
 }
 
-@keyframes mymove {
-  from {
-    left: 0px;
+@media screen and (max-width: 992px) {
+  .column {
+    flex: 50%;
   }
-  to {
-    left: 1100px;
+}
+
+@media screen and (max-width: 600px) {
+  .row2 {
+    flex-direction: column;
   }
 }
 
@@ -142,4 +153,48 @@ form.form {
 input {
   margin: 5px;
   align-content: right;
+}
+
+/* Cloud border for quotes */
+.fancy {
+  align-self: center;
+  text-align: center;
+  display: inline-block;
+  left: 200px;
+  top: 100px;
+
+  box-sizing: border-box;
+  width: 250px;
+  height: 250px;
+  padding: 80px 1em 0 1em;
+  margin: 0 80px;
+  position: relative;
+  background-color: powderblue;
+  border-radius: 100% 100% 0 0;
+}
+
+.fancy::before,
+.fancy::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  background-color: powderblue;
+  border-radius: 100%;
+}
+
+.fancy::before {
+  width: 175px;
+  height: 150px;
+
+  left: -120px;
+
+  border-bottom-right-radius: 0;
+}
+
+.fancy::after {
+  width: 150px;
+  height: 125px;
+  right: -100px;
+  border-bottom-left-radius: 0;
 }
