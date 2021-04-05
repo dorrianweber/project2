@@ -131,6 +131,7 @@ const init = async () => {
     }
     document.getElementById("spendingData").innerHTML = spendIndex;
   });
+
   const url = "https://api.quotable.io/random?tags=inspirational,famous-quotes";
 
   function generateQuote() {
@@ -146,6 +147,9 @@ const init = async () => {
         console.log(err);
       });
   }
+  // Repeat generateQuote() every 10 seconds
+  setInterval(generateQuote(), 30000);
+  //Note - 10000 milliseconds = 10
 };
 
 init();
