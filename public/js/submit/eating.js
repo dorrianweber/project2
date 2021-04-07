@@ -10,6 +10,7 @@ const eatingFormHandler = async (event) => {
   const carbs = document.querySelector("#carbs").value;
 
   if (date && food_name && meal_type && calories) {
+
     date = moment(date).format("M/D/YY");
 
     const response = await fetch("/api/eating", {
@@ -31,7 +32,9 @@ const eatingFormHandler = async (event) => {
     } else {
       alert(response.statusText);
     }
-  }
+  } else {
+    alert("Date, food name, and calories are required fields");
+  };
 };
 
 document

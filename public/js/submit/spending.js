@@ -19,8 +19,10 @@ const spendingFormHandler = async (event) => {
       document.location.replace("/profile");
     } else {
       alert(response.statusText);
-    }
-  }
+    };
+  } else {
+    alert("Date is a required field");
+  };
 };
 
 document
