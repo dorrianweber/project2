@@ -10,7 +10,7 @@ const eatingFormHandler = async (event) => {
   const carbs = document.querySelector("#carbs").value;
 
   if (date && food_name && meal_type && calories) {
-    date = moment(date).format("l");
+    date = moment(date).format("M/D/YY");
 
     const response = await fetch("/api/eating", {
       method: "POST",
