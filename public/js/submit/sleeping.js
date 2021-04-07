@@ -17,8 +17,10 @@ const sleepingFormHandler = async (event) => {
       document.location.replace('/profile');
     } else {
       alert(response.statusText);
-    }
-  }
+    };
+  } else {
+    alert("Date & hours slept are required fields");
+  };
 };
 
 document
