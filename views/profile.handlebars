@@ -1,7 +1,7 @@
 <section class="profile">
     <div class="user">
         <img src="https://github.com/dorrianweber/project2/blob/main/public/images/healthyhabits.png?raw=true">
-        <h2>User Profile</h2>
+        <h2>{{user.name}}'s Profile</h2>
         {{!-- Adding canvas graph area --}}
         <div class="container1">
             <canvas id="myChart"></canvas>
@@ -9,7 +9,25 @@
         <p>Eating:</p>
         <div id="eatingData"></div>
 
+        {{!-- {{#if eating.length}}
+        <div class="col-md-6 project-list">
+            <h3>Current food:</h3>
 
+            {{#each eating as |ate|}}
+            <div class="row mb-2">
+                <div class="col-md-8">
+                    <h4><a href="/eating/{{id}}">{{date}} {{food_name}} {{calories</a></h4>
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-sm btn-danger" data-id="{{ate.id}}">DELETE</button>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+        <div class="col-md-4">
+            <button class="btn btn-sm btn-danger" data-id="{{eating.id}}">DELETE</button>
+        </div> --}}
 
         <p>Sleeping:</p>
         <div id="sleepingData"></div>
