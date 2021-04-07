@@ -40,3 +40,22 @@ const eatingFormHandler = async (event) => {
 document
   .querySelector(".eating-form")
   .addEventListener("submit", eatingFormHandler);
+
+const url = "https://api.quotable.io/random?tags=inspirational,famous-quotes";
+
+function generateQuote() {
+  fetch(url)
+    .then(function (data) {
+      return data.json();
+    })
+    .then(function (data) {
+      document.getElementById("quote").innerHTML = data.content;
+      document.getElementById("author").innerHTML = "- " + data.author;
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
+}
+// Repeat generateQuote() every 10 seconds
+setInterval(generateQuote(), 30000);
+//Note - 10000 milliseconds = 10
