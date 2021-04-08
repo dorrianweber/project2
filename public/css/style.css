@@ -165,7 +165,7 @@ input {
   text-align: center;
   display: inline-block;
   left: 200px;
-  top: 100px;
+  top: 50px;
 
   box-sizing: border-box;
   width: 250px;
@@ -201,4 +201,15 @@ input {
   height: 125px;
   right: -100px;
   border-bottom-left-radius: 0;
+}
+
+#loginpic {
+  background-image: url("https://medikeeper.com/wp-content/uploads/2018/12/20-Simple-Health-Habits-Blog.jpg");
+
+  /* min-height: 380px; */
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
