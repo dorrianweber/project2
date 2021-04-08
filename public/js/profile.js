@@ -77,11 +77,6 @@ const init = async () => {
   var dinners = [];
   var snacks = [];
 
-  console.log(breakfasts);
-  console.log(lunches);
-  console.log(dinners);
-  console.log(snacks);
-
   const eatData = await fetch("/api/eating", {
     method: "GET",
     headers: {
@@ -93,18 +88,13 @@ const init = async () => {
     })
     .then((eatData) => {
       console.log(eatData.data);
-      // console.log(eatData.data)
-      // console.log(eatData);
-      // const days = eatData.data.filter((day) => {
-      for (let index = 0; index < 7; index++) {
+      for (let index = 0; index < 8; index++) {
         let element = thisWeek[index];
         let breakfastCheck = false;
         let lunchCheck = false;
         let dinnerCheck = false;
         let snackCheck = false;
-        console.log(eatData.data.length);
-        for (let index2 = 0; index2 < eatData.data.length; index2++) {
-          // console.log(eatData.data[index2])
+        for (let index2 = 0; index2 < eatData.data.length + 1; index2++) {
           if (eatData.data[index2] && eatData.data[index2].date == element) {
             if (eatData.data[index2].meal_type == "Breakfast") {
               breakfasts.push(eatData.data[index2].calories);
@@ -142,46 +132,8 @@ const init = async () => {
   console.log(dinners);
   console.log(snacks);
 
-  // const element = thisWeek[index];
-  // let breakfastCheck = false
-  // let lunchCheck = false
-  // let dinnerCheck = false
-  // let snackCheck = false
-
-  //   if (day.date === element) {
-  //     if (day.meal_type === "Breakfast") {
-  //       breakfasts.push(day.calories)
-  //       breakfastCheck = true
-  //     }
-  //     if (day.meal_type === "Lunch") {
-  //       lunches.push(day.calories)
-  //       lunchCheck = true
-  //     }
-  //     if (day.meal_type === "Dinner") {
-  //       dinners.push(day.calories)
-  //       dinnerCheck = true
-  //     }
-  //     if (day.meal_type === "Snack") {
-  //       snacks.push(day.calories)
-  //       snackCheck = true
-  //     }
-  //   }
-  //   if (breakfastCheck = false) {
-  //     breakfasts.push(0)
-  //   }
-  //   if (lunchCheck = false) {
-  //     lunches.push(0)
-  //   }
-  //   if (breakfastCheck = false) {
-  //     breakfasts.push(0)
-  //   }
-  //   if (snackCheck = false) {
-  //     snacks.push(0)
-  //   }
-  // };
-
-  var ctx = document.getElementById("myChart");
-  var myChart = new Chart(ctx, {
+  var eatctx = document.getElementById("eatChart");
+  var eatChart = new Chart(eatctx, {
     type: "bar",
     data: {
       labels: thisWeek,
@@ -189,22 +141,22 @@ const init = async () => {
         {
           data: breakfasts,
           label: "Breakfast",
-          backgroundColor: "#3e95cd",
+          backgroundColor: "blue",
         },
         {
           data: lunches,
           label: "Lunch",
-          backgroundColor: "#8e5ea2",
+          backgroundColor: "red",
         },
         {
           data: dinners,
           label: "Dinner",
-          backgroundColor: "#8e5ea2",
+          backgroundColor: "green",
         },
         {
           data: snacks,
           label: "Snack",
-          backgroundColor: "#8e5ea2",
+          backgroundColor: "yellow",
         },
       ],
     },
@@ -215,100 +167,9 @@ const init = async () => {
       },
     },
   });
-  // console.log(`Eating Data:`);
-  //   console.log(eatData.data);
-  //   for (let index = 0; index < eatData.data.length; index++) {
-  //     let foodDate = eatData.data[index].date;
-  //     let foodName = eatData.data[index].food_name;
-  //     eatIndex = eatIndex + foodDate + `: ` + foodName + `<br>`;
-  //   }
-  //   document.getElementById("eatingData").innerHTML = eatIndex;
 
-  // console.log(`Eating Data:`);
-  // console.log(eatData.data);
-  // for (let index = 0; index < eatData.data.length; index++) {
-  //   let foodDate = eatData.data[index].date;
-  //   let foodName = eatData.data[index].food_name;
-  //   eatIndex = eatIndex + foodDate + `: ` + foodName + `<br>`;
-  // }
-  // document.getElementById("eatingData").innerHTML = eatIndex;
+  var sleepHours = [];
 
-  //second API call
-  // const calories1 = [];
-  // fetch("/api/eating", {
-  //   method: "GET",
-  //   headers: {
-  //     "Content-type": "application/json",
-  //   },
-  // })
-  //   .then((eatingRequest2) => {
-  //     return eatingRequest2.json();
-  //   })
-  //   .then((eatData) => {
-  //     const day1 = eatData.data.filter((day) => {
-  //       return day.date === "3/27/21";
-  //     });
-  //     console.log("day1: ", day1);
-  //     day1.forEach((element) => {
-  //       calories1.push(element.calories);
-  //     });
-  //     console.log("calories: ", calories1);
-
-  //     var eatIndex2 = ["Breakfast", "Lunch", "Dinner"];
-  // var foodDate2 = [];
-  // var foodName2 = [
-  //   "Grand Slam",
-  //   "PopEyes chicken sandwhich",
-  //   "20oz Ribeye steak",
-  //   "Veggie omellete",
-  //   "Tuna sandwhich",
-  //   "Pasta with meatballs",
-  // ];
-  // var date1 = [1500, 2000, 2500];
-  // var date2 = [400, 450, 700];
-  // eatingRequest2.json().then((eatData) => {
-  //   for (let index = 0; index < eatData.data.length; index++) {
-  //     let foodDateE = eatData.data[index].date;
-  //     foodName2 = eatData.data[index].food_name;
-  //     let foodCaloriesE = eatData.data[index].calories;
-  //     eatIndex2.push(foodDateE);
-  //     foodCalories2.push(foodCaloriesE);
-  //     console.log("foodCalories2", foodCalories2);
-  //     console.log("eatindex2", eatIndex2);
-  //   }
-
-  //document.getElementById("eatingData").innerHTML = eatIndex2;
-  // Chart section - need to add correct data
-  // });
-  //       var ctx = document.getElementById("myChart");
-  //       var myChart = new Chart(ctx, {
-  //         type: "bar",
-  //         data: {
-  //           labels: eatIndex2,
-  //           datasets: [
-  //             {
-  //               data: calories1,
-  //               label: "3/27/21",
-  //               backgroundColor: "#3e95cd",
-  //             },
-  //             {
-  //               data: date2,
-  //               label: "3/26/21",
-  //               backgroundColor: "#8e5ea2",
-  //             },
-  //           ],
-  //         },
-  //         options: {
-  //           title: {
-  //             display: true,
-  //             text: "Calories per Meal",
-  //           },
-  //         },
-  //       });
-  //     });
-  // };
-
-  //<button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
   const sleepingRequest = await fetch("/api/sleeping", {
     method: "GET",
     headers: {
@@ -316,37 +177,47 @@ const init = async () => {
     },
   });
 
-  var sleepIndex = "";
   sleepingRequest.json().then((newSleep) => {
     console.log(newSleep.data);
-    for (let index = 0; index < newSleep.data.length; index++) {
-      let sleepDate = newSleep.data[index].date;
-      let sleepTime = newSleep.data[index].hours;
-      sleepIndex = sleepIndex + sleepDate + `: ` + sleepTime;
-      // sleepIndex +=
-      //   "<button data-id=" +
-      //   newSleep.data[index].id +
-      //   " class='sleeping'> DELETE </button>" +
-      //   "<br>";
-      console.log(sleepIndex);
+    for (let index = 0; index < 8; index++) {
+      element = thisWeek[index];
+      sleepCheck = false;
+      for (let index2 = 0; index2 < newSleep.data.length + 1; index2++) {
+        if (newSleep.data[index2] && newSleep.data[index2].date == element) {
+          sleepHours.push(newSleep.data[index2].hours);
+          sleepCheck = true;
+        }
+      }
+      if (sleepCheck == false) {
+        sleepHours.push(0);
+      }
     }
-    document.getElementById("sleepingData").innerHTML = sleepIndex;
-    // const deleteBtn = document.querySelectorAll(".sleeping");
 
-    // deleteBtn.forEach((button) => {
-    //   addEventListener("click", deleteSleep);
-    // });
+    var sleepctx = document.getElementById("sleepChart");
+    var sleepChart = new Chart(sleepctx, {
+      type: "bar",
+      data: {
+        labels: thisWeek,
+        datasets: [
+          {
+            data: sleepHours,
+            label: "Hours",
+            backgroundColor: "purple",
+          },
+        ],
+      },
+      options: {
+        title: {
+          display: true,
+          text: "Hours Slept per Night",
+        },
+      },
+    });
   });
 
-  // function deleteSleep(event) {
-  //   console.log("deleteSleep");
-  //   const id = event.target.dataset.id;
-  //   fetch(`/api/sleeping/${id}`, {
-  //     method: "DELETE",
-  //   }).then((data) => {
-  //     window.location.reload();
-  //   });
-  // }
+  var restaurantSpent = [];
+  var coffeeSpent = [];
+  var barSpent = [];
 
   const spendingRequest = await fetch("/api/spending", {
     method: "GET",
@@ -358,13 +229,56 @@ const init = async () => {
   var spendIndex = "";
   spendingRequest.json().then((newSpend) => {
     console.log(newSpend.data);
-    for (let index = 0; index < newSpend.data.length; index++) {
-      let spendDate = newSpend.data[index].date;
-      let spendAmount = newSpend.data[index].restaurant;
-      spendIndex = spendIndex + spendDate + `: ` + spendAmount + `<br>`;
-      console.log(spendIndex);
+    for (let index = 0; index < 8; index++) {
+      element = thisWeek[index];
+      spendCheck = false;
+      for (let index2 = 0; index2 < newSpend.data.length + 1; index2++) {
+        if (newSpend.data[index2] && newSpend.data[index2].date == element) {
+          restaurantSpent.push(newSpend.data[index2].restaurant);
+          coffeeSpent.push(newSpend.data[index2].coffee);
+          barSpent.push(newSpend.data[index2].bar);
+          spendCheck = true;
+        }
+      }
+      if (spendCheck == false) restaurantSpent.push(0);
+      coffeeSpent.push(0);
+      barSpent.push(0);
+
+      console.log(restaurantSpent);
+      console.log(coffeeSpent);
+      console.log(barSpent);
     }
-    document.getElementById("spendingData").innerHTML = spendIndex;
+
+    var spendctx = document.getElementById("spendChart");
+    var spendChart = new Chart(spendctx, {
+      type: "bar",
+      data: {
+        labels: thisWeek,
+        datasets: [
+          {
+            data: restaurantSpent,
+            label: "Restaurants",
+            backgroundColor: "orange",
+          },
+          {
+            data: coffeeSpent,
+            label: "Coffee",
+            backgroundColor: "lime",
+          },
+          {
+            data: barSpent,
+            label: "Bars",
+            backgroundColor: "navy",
+          },
+        ],
+      },
+      options: {
+        title: {
+          display: true,
+          text: "Money Spent per Day",
+        },
+      },
+    });
   });
 };
 
