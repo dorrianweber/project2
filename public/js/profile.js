@@ -308,6 +308,7 @@ const init = async () => {
   //     });
   // };
 
+  //<button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
   const sleepingRequest = await fetch("/api/sleeping", {
     method: "GET",
     headers: {
@@ -321,11 +322,31 @@ const init = async () => {
     for (let index = 0; index < newSleep.data.length; index++) {
       let sleepDate = newSleep.data[index].date;
       let sleepTime = newSleep.data[index].hours;
-      sleepIndex = sleepIndex + sleepDate + `: ` + sleepTime + `<br>`;
+      sleepIndex = sleepIndex + sleepDate + `: ` + sleepTime;
+      // sleepIndex +=
+      //   "<button data-id=" +
+      //   newSleep.data[index].id +
+      //   " class='sleeping'> DELETE </button>" +
+      //   "<br>";
       console.log(sleepIndex);
     }
     document.getElementById("sleepingData").innerHTML = sleepIndex;
+    // const deleteBtn = document.querySelectorAll(".sleeping");
+
+    // deleteBtn.forEach((button) => {
+    //   addEventListener("click", deleteSleep);
+    // });
   });
+
+  // function deleteSleep(event) {
+  //   console.log("deleteSleep");
+  //   const id = event.target.dataset.id;
+  //   fetch(`/api/sleeping/${id}`, {
+  //     method: "DELETE",
+  //   }).then((data) => {
+  //     window.location.reload();
+  //   });
+  // }
 
   const spendingRequest = await fetch("/api/spending", {
     method: "GET",
