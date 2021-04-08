@@ -2,7 +2,6 @@ const router = require("express").Router();
 const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
-const mail_pass = process.env.mail_pass;
 
 const oauth2Client = new OAuth2(
   process.env.client_ID,
