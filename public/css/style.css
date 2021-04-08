@@ -54,15 +54,25 @@ body {
   color: black;
 }
 
-h5 {
+div.welcome {
   flex: 1;
   padding: 10px;
   text-align: center;
+
+  font: optional;
   /* margin-left: 10px;
   margin-right: 10px; */
   color: black;
   font-size: larger;
-  background-color: lightsteelblue;
+  background-color: white;
+  /* background-image: url("https://downloadmasti.files.wordpress.com/2013/01/alaska5bdm5d10.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+.welcome h1 {
+  color: blue;
 }
 
 /* Home page section, 3 columns */
@@ -72,6 +82,23 @@ h5 {
 }
 
 .column {
+  flex: 25%;
+
+  color: blue;
+  font-size: medium;
+  border: solid skyblue;
+  text-align: center;
+  /* margin-bottom: 20px; */
+  padding-bottom: 30px;
+}
+
+/* Profile charts */
+.row3 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.graph {
   flex: 25%;
   padding: 20px;
   color: blue;
@@ -139,11 +166,11 @@ footer {
   padding: 10px;
 }
 
-.container1 {
+/* .container1 {
   height: 500px;
   width: 800px;
   float: right;
-}
+} */
 
 form.form {
   text-align: left;

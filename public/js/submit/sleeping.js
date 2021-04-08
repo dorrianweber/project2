@@ -17,13 +17,15 @@ const sleepingFormHandler = async (event) => {
       document.location.replace("/profile");
     } else {
       alert(response.statusText);
-    };
+    }
   } else {
     alert("Date & hours slept are required fields");
-  };
+  }
 };
 
-document.querySelector(".sleeping-form").addEventL;
+document
+  .querySelector(".sleeping-form")
+  .addEventListener("submit", sleepingFormHandler);
 
 const url = "https://api.quotable.io/random?tags=inspirational,famous-quotes";
 

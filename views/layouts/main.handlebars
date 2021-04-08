@@ -16,7 +16,7 @@
     <div class="flex-column justify-space-around">
         <header class="display-flex justify-space-between align-center p-2">
             <h1>
-                <span role="img" aria-label="cart-wheel">🧘</span>
+                <span role="img" aria-label="yoga">🧘</span>
                 <a>Healthy Habits!</a>
 
             </h1>
@@ -44,6 +44,8 @@
     <!-- Render script for logged in users only -->
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
+    {{else}}
+    <script src="./js/login.js"></script>
     {{/if}}
 </body>
 
