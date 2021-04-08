@@ -161,6 +161,7 @@ const init = async () => {
       ],
     },
     options: {
+      responsive: true,
       title: {
         display: true,
         text: "Calories per Meal",
@@ -207,6 +208,7 @@ const init = async () => {
         ],
       },
       options: {
+        responsive: true,
         title: {
           display: true,
           text: "Hours Slept per Night",
@@ -273,6 +275,7 @@ const init = async () => {
         ],
       },
       options: {
+        responsive: true,
         title: {
           display: true,
           text: "Money Spent per Day",

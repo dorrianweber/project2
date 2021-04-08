@@ -58,17 +58,10 @@ div.welcome {
   flex: 1;
   padding: 10px;
   text-align: center;
-
   font: optional;
-  /* margin-left: 10px;
-  margin-right: 10px; */
   color: black;
   font-size: larger;
   background-color: white;
-  /* background-image: url("https://downloadmasti.files.wordpress.com/2013/01/alaska5bdm5d10.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
 }
 
 .welcome h1 {
@@ -92,20 +85,33 @@ div.welcome {
   padding-bottom: 30px;
 }
 
+img.healthy {
+  height: 90%;
+  width: 90%;
+  position: relative;
+  /* animation: mymove 8s infinite; */
+}
 /* Profile charts */
 .row3 {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
 }
 
-.graph {
+div.graph {
   flex: 25%;
   padding: 20px;
   color: blue;
   font-size: medium;
   border: solid skyblue;
   text-align: center;
+  position: relative;
 }
+
+/* canvas {
+  width: 662px;
+  height: 331px;
+} */
 
 .mainquote {
   flex: 1;
@@ -115,13 +121,6 @@ div.welcome {
   color: black;
   font-size: larger;
   font-style: italic;
-}
-
-img.healthy {
-  height: 90%;
-  width: 90%;
-  position: relative;
-  animation: mymove 8s infinite;
 }
 
 /* .healthy:hover {
@@ -165,12 +164,6 @@ footer {
   text-align: center;
   padding: 10px;
 }
-
-/* .container1 {
-  height: 500px;
-  width: 800px;
-  float: right;
-} */
 
 form.form {
   text-align: left;

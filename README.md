@@ -45,9 +45,9 @@ Team members and roles
 
 ## Screenshot
 
-Screenshots of working website.
-![screenshot of working application](public\images\Healthyhabits-homepage.jpg)
-![screenshot of working application](public\images\Healthyhabits-profilepage.jpg)
+Screenshots of working websit
+![screenshot of working application](https://github.com/dorrianweber/project2/blob/main/public/images/Healthyhabits-homepage.jpg?raw=true)
+![screenshot of working application](https://github.com/dorrianweber/project2/blob/main/public/images/Healthyhabits-profilepage.jpg?raw=true)
 
 GIF of working application:
 
